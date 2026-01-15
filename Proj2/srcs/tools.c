@@ -1,5 +1,11 @@
 #include "../includes/graph.h"
 
+int rand_int(int min, int max)
+{
+  int value;
+  value = min + rand() % (max - min + 1);
+  return value;
+}
 void print_adj(t_graph_matrix *g)
 {
   int i;

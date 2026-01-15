@@ -23,5 +23,6 @@ void    gm_destroy(t_graph_matrix *g);
 
 
 void print_adj(t_graph_matrix *g);
+int rand_int(int min, int max);
 #endif
 
