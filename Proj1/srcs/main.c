@@ -30,16 +30,22 @@ static void print_adj(t_graph_matrix *g)
 
 int main(void)
 {
-  t_graph_matrix *g;
+  t_graph_matrix *gm;
+  int i;
 
-  g = gm_create(3);
-  if(!g)
-    return 1;
+  gm = gm_create(3); 
+  gm_add_edge(gm, 0,1);
+  gm_add_edge(gm, 0,2);
+  gm_add_edge(gm, 1,2);
 
-  gm_add_edge(g, 0,1);
-  gm_add_edge(g, 0,2);
-  printf("the adjacent matrix\n");
-  print_adj(g);
-  gm_destroy(g);
+  printf("adjacent matrix\n");
+  print_adj(gm);
+
+  printf("\n Node degree (matrix);\n");
+  i = -1;
+  while (++i < gm-> n)
+    printf("Node %d; %d\n", i, gm_degree(gm,i));
+
+  gm_destroy(gm);
   return 0;
 }
